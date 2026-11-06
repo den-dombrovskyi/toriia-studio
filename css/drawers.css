@@ -1,0 +1,290 @@
+/* --- Кнопка-гамбургер с текстом "Меню" --- */
+.burger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Выравниваем текст и линии по центру по вертикали */
+  gap: 10px; /* Расстояние между словом "Меню" и полосками */
+  padding: 0;
+  z-index: 100000;
+  position: relative;
+  transition: transform 0.25s ease;
+}
+
+.burger-btn:hover {
+  transform: scale(1.05); /* Аккуратное увеличение при наведении */
+}
+
+/* Стили для слова "Меню" */
+.burger-text {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-main);
+  transition: color 0.2s ease;
+}
+
+.burger-btn:hover .burger-text {
+  color: var(--accent);
+}
+
+/* Контейнер для трех полосок бургера */
+.burger-lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+}
+
+.burger-lines span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* Анимация превращения полосок в крестик при открытии меню */
+.menu-drawer.is-open ~ .header .burger-lines span:nth-child(1),
+.burger-btn.is-active .burger-lines span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.menu-drawer.is-open ~ .header .burger-lines span:nth-child(2),
+.burger-btn.is-active .burger-lines span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-drawer.is-open ~ .header .burger-lines span:nth-child(3),
+.burger-btn.is-active .burger-lines span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* --- Виездная панель --- */
+.menu-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+.menu-drawer.is-open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.menu-drawer__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-drawer.is-open .menu-drawer__overlay {
+  opacity: 1;
+}
+
+.menu-drawer__content {
+  position: fixed;
+  top: 0;
+  right: 100%; /* Ховаємо праворуч за екраном */
+  width: 100%;
+  max-width: 100%; /* Обмежуємо ширину для зручності на планшетах/ПК */
+  height: 100%;
+  padding: 120px 40px;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.menu-drawer.is-open .menu-drawer__content {
+  right: 0;
+}
+
+.menu-drawer__close {
+  background: none;
+  border: none;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 5px;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-bottom: 20px;
+}
+
+/* --- НАВИГАЦИЯ И ВЫПАДАЮЩИЕ СПИСКИ --- */
+.menu-drawer__nav {
+  margin-bottom: auto;
+}
+
+.drawer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.drawer-link,
+.drawer-dropdown__btn {
+  font-family: var(--font-main) !important;
+  font-size: 22px !important;
+  font-weight: 500;
+  color: var(--text-main);
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.2s ease;
+}
+
+.drawer-link:hover,
+.drawer-dropdown__btn:hover {
+  color: var(--accent);
+}
+
+/* Стрелочка возле выпадающих пунктов */
+.drawer-dropdown__btn .arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.drawer-dropdown.is-open .drawer-dropdown__btn .arrow {
+  transform: rotate(90deg);
+}
+
+/* Скрытое подменю */
+.drawer-submenu {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 12px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.drawer-dropdown.is-open .drawer-submenu {
+  display: flex;
+}
+
+.drawer-submenu .drawer-link {
+  font-size: 18px !important;
+  color: var(--text-main);
+}
+
+.drawer-submenu .drawer-link:hover {
+  color: var(--accent);
+}
+
+/* --- КОНТАКТЫ ВНИЗУ --- */
+.menu-drawer__footer {
+  padding-top: 30px;
+  width: 100%;
+}
+
+.menu-drawer__footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 0;
+}
+
+.menu-drawer__footer .btn-instagram {
+  display: inline-flex;
+  padding: 12px 24px;
+  background-color: var(--card-bg);
+  color: var(--accent);
+  text-align: center;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  width: fit-content;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  border: 2px solid var(--card-bg);
+}
+
+.menu-drawer__footer .btn-instagram:hover {
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.2),
+    0 0 20px 4px rgba(255, 255, 255, 0.4);
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  border: 2px solid var(--card-bg);
+  color: var(--accent);
+  background-color: var(--card-bg);
+}
+
+.social-link:hover {
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.2),
+    0 0 20px 4px rgba(255, 255, 255, 0.4);
+}
+
+.menu-drawer__footer .phone {
+  text-decoration: none;
+  color: var(--accent);
+  background-color: var(--card-bg);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  border: 2px solid var(--card-bg);
+  display: inline-flex;
+}
+
+.menu-drawer__footer .phone:hover {
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.2),
+    0 0 20px 4px rgba(255, 255, 255, 0.4);
+}
+
+

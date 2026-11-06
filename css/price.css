@@ -1,0 +1,145 @@
+/* ==========================================
+   Секція: Прайс «Топ Майстер»
+   ================================---------- */
+.price-top-section {
+  padding: 60px 0;
+}
+
+/* Загальна картка прайсу */
+.price-card {
+  background: #fcfbfa;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto 30px auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+}
+
+/* Сітка всередині картки (текст + фото) */
+.price-card__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Шахматний порядок для кожної другої картки на десктопі */
+@media (min-width: 901px) {
+  .price-card__grid--reverse {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+  .price-card__grid--reverse .price-card__content {
+    order: 2;
+  }
+  .price-card__grid--reverse .price-card__image-wrapper {
+    order: 1;
+  }
+}
+
+/* Заголовок категорії прайсу */
+.price-card__category-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Список послуг */
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.price-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 15px;
+  color: #444444;
+}
+
+/* Виділення акцентних позицій (комплексів) */
+.price-list__item--highlight .price-list__name {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.price-list__item--highlight .price-list__cost {
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.price-list__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-list__desc {
+  font-size: 13px;
+  color: #777777;
+  margin-top: 2px;
+}
+
+.price-list__subitem {
+  font-size: 14px;
+  color: #666666;
+  padding-left: 10px;
+}
+
+/* Крапки-роздільники між назвою послуги та ціною */
+.price-list__dots {
+  flex-grow: 1;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.15);
+  margin: 0 12px;
+}
+
+.price-list__cost {
+  font-weight: 600;
+  color: #222222;
+  white-space: nowrap;
+}
+
+/* Блок для зображення */
+.price-card__image-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  max-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f2f0; /* Фоновий колір бренду, якщо картинка не на всю ширину */
+  padding: 0 16px; /* Невеликий відступ всередині, щоб фото виглядало як акуратна рамка */
+}
+
+/* Картинка повністю вміщується в блок без обрізань */
+.price-card__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  max-height: 380px;
+  object-fit: contain; /* Головна зміна: показує всю фотографію повністю, нічого не обрізаючи */
+  object-position: center;
+  display: block;
+}
+
+/* Адаптив для мобільних пристроїв */
+@media (max-width: 900px) {
+  .price-card__grid {
+    grid-template-columns: 1fr;
+  }
+  .price-card__image-wrapper {
+    max-height: 320px;
+    order: -1; /* Фото зверху на мобільних */
+  }
+  .price-card {
+    padding: 24px;
+  }
+}

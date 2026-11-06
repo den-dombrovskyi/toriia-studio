@@ -1,0 +1,154 @@
+/* --- Секція: Про студію (about.css) --- */
+.about-section {
+  padding: 60px 0;
+}
+
+.about__card {
+  background: #fcfbfa;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 960px;
+  margin: 30px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+}
+
+/* Оформлення блоку для фото */
+.about__image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-gallery__item {
+  width: 100%;
+  max-width: 600px;
+  height: 360px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fcfbfa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-gallery__item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Фото повністю ціле, без обрізання */
+  border-radius: 16px;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.about-gallery__item:hover img {
+  transform: scale(1.02);
+}
+
+/* Текстовий блок */
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.about__title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.about__lead {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-main);
+  font-weight: 500;
+  margin: 0;
+}
+
+.about__text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0;
+}
+
+/* Блок послуг */
+.about__services {
+  background: rgba(232, 122, 144, 0.04);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 8px 0;
+}
+
+.about__services-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222222;
+  margin: 0 0 12px 0;
+}
+
+.about__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about__list li {
+  font-size: 15px;
+  color: #555555;
+  position: relative;
+  padding-left: 20px;
+}
+
+.about__list li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--text-main);
+  font-size: 12px;
+  top: 2px;
+}
+
+.about__list strong {
+  color: var(--text-main);
+}
+
+.about__footer-text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #444444;
+  font-weight: 500;
+  margin: 0;
+}
+
+.about__welcome {
+  margin-top: 8px;
+  padding: 14px 18px;
+  background: rgba(232, 122, 144, 0.08);
+  border-left: 3px solid #e87a90;
+  border-radius: 0 10px 10px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333333;
+  line-height: 1.5;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .about__card {
+    padding: 20px;
+  }
+
+  .about-gallery__item {
+    height: 260px;
+  }
+}

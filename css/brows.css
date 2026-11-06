@@ -1,0 +1,145 @@
+/* ==========================================
+   Секція: Брови
+   ================================---------- */
+.brows-section {
+  padding: 60px 0;
+}
+
+/* Картка секції Брови (якщо використовується окремий клас) */
+.brows-section .brows__card {
+  background: #fcfbfa;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 960px;
+  margin: 30px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+}
+
+/* Сітка галереї 3 в ряд */
+.brows-section .brows-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+/* Элемент галереї зі скругленнями */
+.brows-section .brows-gallery__item {
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fcfbfa;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brows-section .brows-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.brows-section .brows-gallery__item:hover img {
+  transform: scale(1.03);
+}
+
+/* Текстовий блок */
+.brows-section .brows__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.brows-section .brows__name {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.brows-section .brows__experience {
+  font-size: 15px;
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.65;
+}
+
+.brows-section .brows__text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0;
+}
+
+/* Список послуг брів */
+.brows-section .brows__list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.brows-section .brows__list li {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #555555;
+}
+
+.brows-section .brows__list strong {
+  color: var(--text-main);
+}
+
+/* Фірмовий плашка-слоган */
+.brows-section .brows__slogan {
+  margin-top: 8px;
+  padding: 14px 18px;
+  background: rgba(232, 122, 144, 0.08);
+  border-left: 3px solid #e87a90;
+  border-radius: 0 10px 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  line-height: 1.5;
+}
+
+/* --- Адаптив для брів --- */
+@media (max-width: 992px) {
+  .brows-section .brows-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .brows-section .brows-gallery__item {
+    height: 340px;
+  }
+  .brows-section .brows-gallery__item:nth-child(3) {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .brows-section .brows__card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .brows-section .brows-gallery {
+    grid-template-columns: 1fr;
+  }
+  .brows-section .brows-gallery__item {
+    height: 360px;
+  }
+  .brows-section .brows-gallery__item:nth-child(3) {
+    grid-column: span 1;
+  }
+}

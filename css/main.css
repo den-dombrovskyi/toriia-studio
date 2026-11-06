@@ -1,0 +1,58 @@
+@import "variables.css";
+@import "drawers.css";
+
+html {
+  scrollbar-gutter: stable;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Блокировка прокрутки страницы, когда меню открыто */
+body.no-scroll {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  padding: 40px 0;
+  height: 100vh;
+  background-image: url("../images/header.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  font-size: 42px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-main);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.header__logo span {
+  color: var(--accent);
+  font-weight: 300;
+}
