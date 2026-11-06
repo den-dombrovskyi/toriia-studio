@@ -3,6 +3,10 @@
   padding: 60px 0;
 }
 
+.section__title {
+  color: var(--accent);
+}
+
 .top-master-section .master__card {
   background: #fcfbfa;
   border: 1px solid rgba(0, 0, 0, 0.04);
