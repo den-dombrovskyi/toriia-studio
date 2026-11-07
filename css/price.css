@@ -5,6 +5,10 @@
   padding: 60px 0;
 }
 
+.price-brows-section {
+  margin-top: 80px;
+}
+
 /* Загальна картка прайсу */
 .price-card {
   background: #fcfbfa;
