@@ -102,7 +102,7 @@
   width: 100%;
   max-width: 100%; /* Обмежуємо ширину для зручності на планшетах/ПК */
   height: 100%;
-  padding: 120px 40px;
+  padding: 160px 40px;
   display: flex;
   flex-direction: column;
   transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
