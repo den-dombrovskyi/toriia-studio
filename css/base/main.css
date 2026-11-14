@@ -1,0 +1,71 @@
+
+/* Підключення базових стилів */
+@import "./variables.css";
+@import "../components/drawers.css";
+
+/* Глобальні налаштування */
+
+html {
+  scrollbar-gutter: stable;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-primary);
+  color: var(--color-primary);
+  line-height: 1.6;
+}
+
+/* Блокування прокручування при відкритому меню */
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Загальний контейнер */
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Головна секція */
+
+.header {
+  height: 100vh;
+  padding: 40px 0;
+  background-image: url("../../images/header.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Верхня панель */
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Логотип */
+
+.header__logo {
+  color: var(--color-primary);
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header__logo span {
+  color: var(--color-white);
+  font-weight: 300;
+}

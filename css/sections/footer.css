@@ -1,91 +1,112 @@
-/* ==========================================
+/* ========================================
    Секція: Футер
-   ================================---------- */
+======================================== */
+
 .footer {
-  background-color: #5e5a80; /* Серый фон */
-  padding: 40px 0;
   margin-top: 60px;
-  overflow: visible; /* Чтобы свечение не обрезалось */
+  padding: 40px 0;
+
+  background-color: var(--color-footer);
+  overflow: visible;
 }
+
+/* Контейнер футера */
 
 .footer__content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 24px;
+
   max-width: 960px;
   margin: 0 auto;
 }
 
-/* Ссылка с телефоном */
+/* Посилання з телефоном */
+
 .footer__phone {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   padding: 12px 24px;
+
   background-color: var(--card-bg);
   border-radius: 50px;
+
+  color: var(--color-white);
   font-size: 16px;
   font-weight: 600;
-  color: #ffffff;
   text-decoration: none;
+
   transition:
     box-shadow 0.3s ease,
     background-color 0.3s ease;
 }
 
-/* При наведении: кнопка на месте, белое свечение со всех сторон */
+/* Біле світіння при наведенні */
+
 .footer__phone:hover {
-   box-shadow:
+  box-shadow:
     0 0 0 2px rgba(255, 255, 255, 0.2),
     0 0 20px 4px rgba(255, 255, 255, 0.4);
 }
 
-/* Блок соцсетей */
+/* Блок соціальних мереж */
+
 .footer__socials {
   display: flex;
   align-items: center;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 12px;
 }
 
-/* Кнопки соцсетей */
+/* Кнопки соціальних мереж */
+
 .footer__socials a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   padding: 10px 20px;
+
   background-color: var(--card-bg);
   border-radius: 50px;
+
+  color: var(--color-white);
   font-size: 15px;
   font-weight: 600;
-  color: #ffffff;
   text-decoration: none;
+
   transition:
     box-shadow 0.3s ease,
     background-color 0.3s ease;
 }
 
-/* При наведении: кнопка НЕ подпрыгивает, а равномерно светится белым */
+/* Біле світіння при наведенні */
+
 .footer__socials a:hover {
   box-shadow:
     0 0 0 2px rgba(255, 255, 255, 0.2),
     0 0 20px 4px rgba(255, 255, 255, 0.4);
 }
 
-/* --- Адаптив --- */
+/* ========================================
+   Адаптивність
+======================================== */
+
 @media (max-width: 768px) {
   .footer {
-    padding: 30px 0;
     margin-top: 40px;
+    padding: 30px 0;
   }
 
   .footer__content {
     flex-direction: column;
     align-items: center;
-    text-align: center;
     gap: 16px;
+    text-align: center;
   }
 
   .footer__socials {

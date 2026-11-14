@@ -1,24 +1,33 @@
-/* --- Секція: Топ Майстер --- */
+/* ========================================
+   Секція: Топ Майстер
+======================================== */
+
 .top-master-section {
   padding: 60px 0;
 }
 
 .section__title {
-  color: var(--accent);
+  color: var(--color-white);
 }
 
+/* Картка майстра */
+
 .top-master-section .master__card {
-  background: #fcfbfa;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  border-radius: 24px;
-  padding: 32px;
-  max-width: 960px;
-  margin: 30px auto 0 auto;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+
+  max-width: 960px;
+  margin: 30px auto 0;
+  padding: 32px;
+
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px var(--color-shadow);
 }
+
+/* Галерея робіт */
 
 .top-master-gallery {
   display: grid;
@@ -28,27 +37,33 @@
 }
 
 .top-master-gallery__item {
-  border-radius: 20px;
-  overflow: hidden;
-  background-color: #fcfbfa; /* Зливається з карточкою */
-  height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  height: 280px;
+  overflow: hidden;
+
+  background-color: var(--color-card);
+  border-radius: 20px;
 }
 
 .top-master-gallery__item img {
+  display: block;
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* Фото повністю ціле, без обрізання */
-  border-radius: 16px;  /* Акуратне скруглення кутів самої картини */
-  display: block;
+
+  object-fit: contain;
+  border-radius: 16px;
+
   transition: transform 0.4s ease;
 }
 
 .top-master-gallery__item:hover img {
   transform: scale(1.02);
 }
+
+/* Інформація про майстра */
 
 .top-master-section .master__content {
   display: flex;
@@ -58,17 +73,17 @@
 }
 
 .top-master-section .master__name {
+  margin: 0;
+  color: var(--text-main);
   font-size: 28px;
   font-weight: 700;
-  color: var(--text-main);
-  margin: 0;
 }
 
 .top-master-section .master__experience {
+  margin: 0;
+  color: var(--text-main);
   font-size: 16px;
   line-height: 1.6;
-  color: var(--text-main);
-  margin: 0;
 }
 
 .top-master-section .master__experience strong {
@@ -76,31 +91,39 @@
 }
 
 .top-master-section .master__text {
+  margin: 0;
+  color: var(--color-text-muted);
   font-size: 15px;
   line-height: 1.65;
-  color: #555555;
-  margin: 0;
 }
+
+/* Цитата майстра */
 
 .top-master-section .master__slogan {
   margin-top: 8px;
   padding: 14px 18px;
+
   background: rgba(232, 122, 144, 0.08);
   border-left: 3px solid #e87a90;
   border-radius: 0 10px 10px 0;
+
+  color: #333333;
   font-size: 14px;
   font-weight: 500;
-  color: #333333;
   line-height: 1.5;
 }
+
+/* Адаптація */
 
 @media (max-width: 768px) {
   .top-master-section .master__card {
     padding: 20px;
   }
+
   .top-master-gallery {
     grid-template-columns: 1fr;
   }
+
   .top-master-gallery__item {
     height: 240px;
   }

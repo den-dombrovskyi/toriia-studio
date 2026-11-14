@@ -1,35 +1,49 @@
-/* --- Секція: Контакти --- */
+/* ========================================
+   Секція: Контакти
+======================================== */
+
 .contacts-section {
   padding: 60px 0;
 }
 
+/* Основна картка */
+
 .contacts__card {
-  background: #fcfbfa;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  border-radius: 24px;
-  padding: 32px;
-  max-width: 960px;
-  margin: 30px auto 0 auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+
+  max-width: 960px;
+  margin: 30px auto 0;
+  padding: 32px;
+
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px var(--color-shadow);
+
   text-align: left;
 }
 
+/* Заголовки */
+
 .contacts__title {
+  margin: 0;
+
+  color: var(--text-main);
   font-size: 28px;
   font-weight: 700;
-  color: var(--text-main);
-  margin: 0;
 }
 
 .contacts__subtitle {
-  font-size: 16px;
+  margin: -16px 0 0;
+
   color: var(--text-main);
+  font-size: 16px;
   font-weight: 500;
-  margin: -16px 0 0 0;
 }
+
+/* Список контактів */
 
 .contacts__list-wrapper {
   display: flex;
@@ -37,36 +51,45 @@
   gap: 16px;
 }
 
-/* Строки контактов — теперь это ссылки, кликабельные по всей площади */
+/* Клікабельні рядки контактів */
+
 .contacts__row {
   display: flex;
   align-items: center;
   gap: 16px;
-  background: var(--accent);
+
   padding: 16px 20px;
+
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
   border-radius: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.04);
+
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
-/* При наведении вся плашка становится розовой */
+/* Наведення на контакт */
+
 .contacts__row:hover {
   background-color: var(--text-main);
 }
 
-/* Квадратный контейнер для иконки слева */
+/* Іконки */
+
 .contacts__icon {
-  font-size: 22px;
-  background: rgba(232, 122, 144, 0.1);
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+
+  width: 48px;
+  height: 48px;
   overflow: hidden;
+
+  background: rgba(232, 122, 144, 0.1);
+  border-radius: 12px;
+
+  font-size: 22px;
   transition: background-color 0.3s ease;
 }
 
@@ -74,42 +97,55 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
+/* Іконки-зображення */
+
 .contacts__icon--img {
-  background: transparent;
   padding: 0;
+  background: transparent;
 }
 
 .contacts__icon--img img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   border-radius: 12px;
 }
 
-/* Подзаголовки (Телефон, Viber...) — розовые, при наведении — белые */
+/* Назви контактів */
+
 .contacts__info-text h3 {
+  margin: 0 0 2px;
+
+  color: var(--text-main);
   font-size: 16px;
   font-weight: 600;
-  color: var(--text-main);
-  margin: 0 0 2px 0;
+
   transition: color 0.3s ease;
 }
 
 .contacts__row:hover .contacts__info-text h3 {
-  color: var(--accent);
+  color: var(--color-white);
 }
 
-/* Текст внутри строки — серый, при наведении — белый */
+/* Контактна інформація */
+
 .contacts__info-text p {
-  font-size: 15px;
-  color: var(--text-main);
   margin: 0;
+
+  color: var(--text-main);
+  font-size: 15px;
+
   transition: color 0.3s ease;
 }
 
 .contacts__row:hover .contacts__info-text p {
-  color: var(--accent);
+  color: var(--color-white);
 }
+
+/* ========================================
+   Адаптивність
+======================================== */
 
 @media (max-width: 768px) {
   .contacts__card {

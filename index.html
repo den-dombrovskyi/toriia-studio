@@ -12,16 +12,16 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="./css/top-master.css" />
-    <link rel="stylesheet" href="./css/master.css" />
-    <link rel="stylesheet" href="./css/pro-studio.css" />
-    <link rel="stylesheet" href="./css/contacts.css" />
-    <link rel="stylesheet" href="./css/address.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/scroll-top.css" />
-    <link rel="stylesheet" href="./css/brows.css" />
-    <link rel="stylesheet" href="./css/price.css" />
+    <link rel="stylesheet" href="css/base/main.css" />
+    <link rel="stylesheet" href="css/sections/top-master.css" />
+    <link rel="stylesheet" href="css/sections/master.css" />
+    <link rel="stylesheet" href="css/sections/pro-studio.css" />
+    <link rel="stylesheet" href="css/sections/contacts.css" />
+    <link rel="stylesheet" href="css/sections/address.css" />
+    <link rel="stylesheet" href="css/sections/footer.css" />
+    <link rel="stylesheet" href="css/components/scroll-top.css" />
+    <link rel="stylesheet" href="css/sections/brows.css" />
+    <link rel="stylesheet" href="css/sections/price.css" />
   </head>
   <body>
     <!-- Шапка сайта -->
@@ -133,6 +133,7 @@
       <!-- Секция: Про студію -->
       <section id="about" class="section about-section">
         <div class="container">
+          <h2 class="section__title">Про Студію</h2>
           <div class="about__card">
             <!-- Фотографія студії/засновниць зверху -->
             <div class="about__image-wrapper">
@@ -1145,7 +1146,10 @@
       </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+
     <!-- Кнопка «Наверх» -->
     <a href="#" class="scroll-top-btn" id="scrollTopBtn" aria-label="Нагору">
       <span>↑</span>

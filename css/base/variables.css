@@ -1,0 +1,26 @@
+:root {
+  /* Brand colors */
+  --color-primary: #f52887;
+  --color-white: #ffffff;
+  --color-card: #fcfbfa;
+  --color-footer: #5e5a80;
+
+  /* Backgrounds */
+  --color-background: #e5dbde;
+  --color-soft-background: #fdf7f9;
+
+  /* Text */
+  --color-text: #222222;
+  --color-text-muted: #555555;
+
+  /* Borders and effects */
+  --color-border: rgba(0, 0, 0, 0.04);
+  --color-shadow: rgba(0, 0, 0, 0.03);
+
+  /* Typography */
+  --font-main: "Montserrat", sans-serif;
+
+  /* Compatibility with existing styles */
+  --card-bg: var(--color-primary);
+  --text-main: var(--color-primary);
+}
